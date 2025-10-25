@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juu Go id. - Jasa Desain Grafis Profesional UMKM</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* CSS Reset Sederhana */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-green: #2e6e54; /* Warna hijau dari logo Anda */
+            --dark-text: #333;
+            --light-text: #f9f9f9;
+            --background: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        /* 1. Header & Navigasi */
+        header {
+            background: var(--background);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .logo img {
+            height: 45px; 
+            width: auto;  
+            display: block;
+        }
+
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--brand-green);
+        }
+
+        .cta-button {
+            background-color: var(--brand-green);
+            color: var(--light-text);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #255843; 
+            color: var(--light-text);
+        }
+
+        /* 2. Hero Section (Pesan Utama) */
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh; 
+            
+            /* --- PENTING: GANTI LINK GAMBAR HERO DI BAWAH INI --- */
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://via.placeholder.com/1500x800.png?text=Ganti+gambar+ini+dengan+link+mockup+terbaik+Anda') no-repeat center center/cover;
+            
+            color: var(--light-text);
+        }
+        
+        #hero .hero-content {
+            background-color: rgba(46, 110, 84, 0.8); 
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        #hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        #hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* 3. Section Umum */
+        section {
+            padding: 60px 0;
+        }
+        
+        section.bg-light {
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        /* 4. Layanan Kami (3 Kolom) */
+        #services .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px;
+            text-align: center;
+        }
+
+        .service-card {
+            background: var(--background);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            font-size: 48px;
+            color: var(--brand-green);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* 5. Portofolio (3 Kolom) */
+        #portfolio .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(46, 110, 84, 0.9); 
+            color: var(--light-text);
+            padding: 20px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+
+        /* 6. Call to Action (CTA) Section */
+        #cta {
+            background-color: var(--brand-green);
+            color: var(--light-text);
+            text-align: center;
+        }
+
+        #cta h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        #cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* 7. Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #333;
+            color: var(--light-text);
+            margin-top: 40px;
+        }
+
+        /* Penyesuaian untuk Mobile (Responsive) */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; 
+            }
+            
+            #hero h1 {
+                font-size: 36px;
+            }
+
+            #hero p {
+                font-size: 18px;
+            }
+            
+            #services .services-grid,
+            #portfolio .portfolio-grid {
+                grid-template-columns: 1fr; 
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            
+            <a href="#" class="logo">
+                <img src="https://iili.io/Kr00GcB.md.png" alt="Juu Go id. Logo">
+            </a>
+
+            <ul>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#portfolio">Portofolio</a></li>
+                <li><a href="#cta" class="cta-button">Kontak Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Design that tells a story.</h1>
+            <p>Kami bantu UMKM Indonesia naik kelas dengan desain profesional yang bercerita.</p>
+            <a href="#cta" class="cta-button" style="font-size: 18px; padding: 15px 30px;">Mulai Konsultasi (GratIS!)</a>
+        </div>
+    </section>
+
+    <section id="services" class="container">
+        <h2 class="section-title">Layanan Profesional Kami</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class='bx bxs-palette'></i>
+                <h3>Desain Logo & Brand</h3>
+                <p>Menciptakan identitas visual yang kuat dan berkarakter untuk bisnis Anda.</p>
+            </div>
+            <div class="service-card">
+                <i class='bx bxs-megaphone'></i>
+                <h3>Desain Promosi</h3>
+                <p>Pamflet, brosur, banner, dan spanduk yang menarik perhatian dan menjual.</p>
+            </div>
+            <div class="service-card">
+                <i class='bx bxl-instagram-alt'></i>
+                <h3>Konten Media Sosial</h3>
+                <p>Desain feed dan story Instagram yang estetik dan konsisten.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Portofolio Terbaik Kami</h2>
+            
+            <div class="portfolio-grid">
+                
+                <div class="portfolio-item">
+                    <img src="https://iili.io/KrEOCV2.md.png" alt="Portofolio 1">
+                    <div class="portfolio-overlay">
+                        <h3>Desain Portofolio 1</h3> </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://iili.io/KrENuQp.md.png" alt="Portofolio 2">
+                    <div class="portfolio-overlay">
+                        <h3>Desain Portofolio 2</h3> </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://iili.io/KrEefdF.md.png" alt="Portofolio 3">
+                    <div class="portfolio-overlay">
+                        <h3>Desain Portofolio 3</h3> </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="cta">
+        <div class="container">
+            <h2>Siap Upgrade Tampilan Bisnis Anda?</h2>
+            <p>Jangan biarkan desain yang buruk menghambat bisnis Anda. Harga mulai Rp 100rb!</p>
+            
+            <a href="https://api.whatsapp.com/send?phone=62895604710203&text=halo%20kak%2C%20mau%20konsultasi" 
+               class="cta-button" 
+               style="font-size: 18px; padding: 15px 30px; background-color: var(--light-text); color: var(--brand-green);">
+                <i class='bx bxl-whatsapp'></i> Hubungi Kami via WhatsApp!
+            </a>
+            </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Juu Go id. Design that tells a story.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
